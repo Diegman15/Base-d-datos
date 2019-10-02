@@ -40,7 +40,7 @@
             </WrapPanel>
             <WrapPanel>
                 <TextBlock Text="Telefono: "/>
-                <TextBlock Name="txtTelefono"/>
+                <TextBox Name="txtTelefono"/>
             </WrapPanel>
             <WrapPanel>
                 <TextBlock Text="Dirección : "/>

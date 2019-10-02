@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "calcularingresosalaño", "calcularingresosalaño\calcularingresosalaño.vcxproj", "{B53B667F-4AC2-45A7-80E4-F6EB0A2ADDDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B53B667F-4AC2-45A7-80E4-F6EB0A2ADDDA}.Debug|x64.ActiveCfg = Debug|x64
+		{B53B667F-4AC2-45A7-80E4-F6EB0A2ADDDA}.Debug|x64.Build.0 = Debug|x64
+		{B53B667F-4AC2-45A7-80E4-F6EB0A2ADDDA}.Debug|x86.ActiveCfg = Debug|Win32
+		{B53B667F-4AC2-45A7-80E4-F6EB0A2ADDDA}.Debug|x86.Build.0 = Debug|Win32
+		{B53B667F-4AC2-45A7-80E4-F6EB0A2ADDDA}.Release|x64.ActiveCfg = Release|x64
+		{B53B667F-4AC2-45A7-80E4-F6EB0A2ADDDA}.Release|x64.Build.0 = Release|x64
+		{B53B667F-4AC2-45A7-80E4-F6EB0A2ADDDA}.Release|x86.ActiveCfg = Release|Win32
+		{B53B667F-4AC2-45A7-80E4-F6EB0A2ADDDA}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9382C30-C082-4E35-BA60-8DAE99F20741}
+	EndGlobalSection
+EndGlobal

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.OleDb;
+using System.Data;
 
 namespace WpfApp1
 {
@@ -20,16 +22,42 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        
-      
+
+        OleDbConnection con; //Agregamos la conexion    
+        DataTable dt; //Agregar la tabla
         public MainWindow()
         {
             InitializeComponent();
-            //Conectamos la base de datos a nuestro archivo Access
+            con = new OleDbConnection();
+            con.ConnectionString = "Provider=Microsoft.Jet.Oledb.4.0; Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "\\AlumnosDB.mdb";//Conectamos la base de datos a nuestro archivo Access
            
 
         }
-        
+
+        private void BtnNuevo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnEditar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnSalir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
     
