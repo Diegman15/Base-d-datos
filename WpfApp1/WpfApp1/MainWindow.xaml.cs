@@ -30,13 +30,64 @@ namespace WpfApp1
             InitializeComponent();
             con = new OleDbConnection();
             con.ConnectionString = "Provider=Microsoft.Jet.Oledb.4.0; Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "\\AlumnosDB.mdb";//Conectamos la base de datos a nuestro archivo Access
-           
+            MostrarDatos();
 
         }
-
+        private void MostrarDatos()
+        {
+            OleDbCommand cmd = new OleDbCommand();//ole ayuda a correr comandos 
+            if (con.State != ConnectionState.Open) con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "select*from Pogra";//esto indica que seleccione todos los campos que estan en la tabla progra
+            OleDbDataAdapter da = new OleDbDataAdapter();
+            dt = new DataTable();
+            da.Fill(dt);
+            gvDatos.ItemsSource = dt.AsDataView();
+            if (dt.Rows.Count > 0)
+            {
+                lbContenido.Visibility = System.Windows.Visibility.Hidden;
+                gvDatos.Visibility = System.Windows.Visibility.Visible;
+            }
+            else
+            {
+                lbContenido.Visibility = System.Windows.Visibility.Visible;
+                gvDatos.Visibility = System.Windows.Visibility.Hidden;
+            }
+        }
+        private void LimpiarTodo()
+        {
+            txtId.Text = "";
+            txtNombre.Text = "";
+            cbGenero.SelectedIndex = 0; 
+            txtTelefono.Text = "";
+            txtDireccion.Text = "";
+            btnNuevo.Content = "Nuevo";
+            txtId.IsEnabled = true;
+        }
         private void BtnNuevo_Click(object sender, RoutedEventArgs e)
         {
+            OleDbCommand cmd = new OleDbCommand();
+            if (con.State != ConnectionState.Open) con.Open();
+            cmd.Connection = con;
+            if(txtId.Text!="")
+            {
+                if (cbGenero.Text != "Selecciona Genero")
+                {
+                    cmd.CommandText = "insert into Progra(Id,Nombre,Genero,Telefono,Direccion)" + "Values(" + txtId.Text + ",'" + txtNombre.Text + ",'" + cbGenero.Text + ",'" + txtTelefono.Text + ",'" + txtDireccion.Text + "')";
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Alumnos agregado correctamente... ");
+                    LimpiarTodo();
 
+                }
+            }
+            else
+            {
+                cmd.CommandText = "update Progra set Nombre='" + txtNombre.Text + "'Genero='" + cbGenero.Text + "',Telefono=" + txtTelefono.Text + ",'Direccion='" + txtDireccion.Text + "'where Id=" + txtId.Text;
+                cmd.ExecuteNonQuery();
+                MostrarDatos();
+                MessageBox.Show("Datos del alumno Actualizados...");
+                LimpiarTodo(); 
+            }
         }
 
         private void BtnEditar_Click(object sender, RoutedEventArgs e)
@@ -60,5 +111,6 @@ namespace WpfApp1
         }
     }
 }
+
     
 
